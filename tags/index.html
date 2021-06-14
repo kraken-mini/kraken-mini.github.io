@@ -10,7 +10,7 @@
   
   <title>
     
-      Kraken&#39;s FurBlog
+      Tags | Kraken&#39;s FurBlog
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -192,40 +192,29 @@
 </header>
 
     <div id="article-banner">
-  <h2>Archives</h2>
-  <p class="post-date">Archives</p>
+  <h2>Tags</h2>
+  <p class="post-date">Tag Retrieval</p>
 </div>
-<main class="app-body" id="archives">
-  
-  
-  
-    <section class="time-section">
-  <h1 class="section-year">
-    2021
-  </h1>
-  <div class="section-list">
-    
-    
-      <div class="section-list-item">
-        <a href="/master/2021/06/11/First-post/" class="archive-title">First post</a>
-        <p class="archive-date">06-11</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/master/2021/06/11/hello-world/" class="archive-title">Hello World</a>
-        <p class="archive-date">06-11</p>
-      </div>
+<main class="app-body">
+  <div id="tag-cloud">
     
   </div>
-</section>
   
 </main>
 
 <script>
   (function () {
-    var url = 'http://kraken-mini.github.io/master/archives/2021/06/index.html';
-    $('#article-banner').geopattern(url);
-    $('.header').removeClass('fixed-header');
+    var url = 'http://kraken-mini.github.io/master/tags/index.html'
+    $('#article-banner').geopattern(url)
+    $('.header').removeClass('fixed-header')
+
+    var tag = location.hash.replace('#', '')
+    if (tag) {
+      var tagId = "#tag-" + tag;
+      $("html, body").animate({
+        scrollTop: $(tagId).offset().top 
+      }, 400)
+    }
   })();
 </script>
     <div class="scroll-top">
